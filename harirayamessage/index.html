@@ -2,21 +2,123 @@
 <html>
   <head>
     <title>Selamat Hari Raya 2019</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Nunito&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      p,
+      h3 {
+        color: rgb(7, 7, 7);
+        line-height: 28px;
+        text-align: justify;
+        font-family: "Nunito", sans-serif;
+      }
+      h1,
+      h2 {
+        color: rgb(7, 7, 7);
+        font-family: "Gloria Hallelujah", cursive;
+      }
+      body {
+        max-width: 80vw;
+        background-color: rgb(157, 238, 181);
+      }
+      img {
+        width: 50%;
+      }
+    </style>
   </head>
   <body>
     <main>
-      <h2>Dear Family</h2>
+      <h3>Dear Family</h3>
       <h1>SELAMAT HARI RAYA!</h1>
       <h2>Maaf Zahir & Batin</h2>
       <h3>Lots of love,<br />Nadiah & Ruben<br /></h3>
-
+      <p>
+        Click on your name for your message!
+      </p>
       <nav>
         <ul>
-          <li><button id="click-me-button">Dear Papa</button></li>
-          <li><button id="click-me-button-2">Dear Mama</button></li>
-          <li><button id="click-me-button-3">Dear Hafiz</button></li>
+          <li>
+            <button class="toggle-button" id="click-me-button">
+              Dear Papa
+            </button>
+          </li>
+          <li>
+            <button class="toggle-button" id="click-me-button-2">
+              Dear Mama
+            </button>
+          </li>
+          <li>
+            <button class="toggle-button" id="click-me-button-3">
+              Dear Hafiz
+            </button>
+          </li>
         </ul>
       </nav>
+      <div class="toggle" data-button-id="click-me-button">
+        <p>
+          <strong>To Papa:</strong><br />
+          Selamat hari raya, maaf zahir & batin. May you be blessed with good
+          health, wealth and longevity. Thank you for everything.<br /><br />
+          <em>
+            Semoga panjang umur, murah rezeki, sentiasa sihat wal afiat. Makan
+            minum halalkan, arigatou gozaimasu! </em
+          ><br /><br />
+          We love you
+        </p>
+      </div>
+
+      <div class="toggle" data-button-id="click-me-button-2">
+        <p>
+          <strong>To Mama: </strong><br />
+          Selamat hari raya, maaf zahir & batin. May you be blessed with good
+          health and wealth and longevity. Please take care of your legs and
+          don't push yourself too hard. Thank you for everything.<br /><br />
+          <em>
+            Semoga panjang umur, murah rezeki, sentiasa sihat wal afiat. Makan
+            minum halalkan, arigatou gozaimasu! </em
+          ><br /><br />
+          We love you
+        </p>
+      </div>
+
+      <div class="toggle" data-button-id="click-me-button-3">
+        <p>
+          <strong>To Hafiz: </strong><br />
+          Selamat hari raya, maaf zahir & batin. May you be blessed with good
+          health and good career. Live boldly. Thank you for your friendship.<br /><br />
+          We love you
+        </p>
+      </div>
+      <img src="photo.jpg" />
+      <p>
+        Made with love by NadiahMaher & RubenMaher |
+        <b>5 June 2019</b>
+      </p>
     </main>
+    <script>
+      const hideAllToggleButtons = () => {
+        document.querySelectorAll(".toggle").forEach(element => {
+          element.style.display = "none";
+        });
+      };
+
+      document.querySelectorAll(".toggle-button").forEach(element => {
+        element.addEventListener("click", event => {
+          hideAllToggleButtons();
+          document.querySelector(
+            `.toggle[data-button-id=${event.target.id}]`
+          ).style.display = "block";
+        });
+      });
+
+      hideAllToggleButtons();
+    </script>
   </body>
 </html>
